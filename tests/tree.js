@@ -64,8 +64,8 @@ QUnit.module('Тестируем функцию tree', function () {
 			'   *********   \n' +
 			'  ***********  \n' +
 			' ************* \n' +
-            '***************\n' +
-            '       |       \n' ;
+			'***************\n' +
+			'       |       \n' ;
 		assert.strictEqual(tree(9), expected);
 		assert.strictEqual(tree('9'), expected);
 	});
