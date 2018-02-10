@@ -1,16 +1,19 @@
-function tree(height) {
-    if (height < 3)
+'use strict';
+
+const tree = height => {
+    if (isNaN(height) || (height < 3)) {
         return null;
-    var stringTree = "";
-    for (var i = 0; i < height - 1; i++) {
-        for (var j = 0; j < (height - 1) - i - 1; j++) stringTree += " ";
-        for (j = 0; j < 2 * i + 1; j++) stringTree += "*";
-        for (j = 0; j < (height - 1) - i - 1; j++) stringTree += " ";
-        stringTree += "\n";
     }
-    for (i = 0; i < height - 2; i++) stringTree += " ";
-    stringTree += "|";
-    for (i = 0; i < height - 2; i++) stringTree += " ";
-    stringTree += "\n";
+    let stringTree = "";
+    for (let i = 0; i < height - 1; i++) {
+        stringTree += (" ".repeat((height - 1) - i - 1) +
+                       "*".repeat(2 * i + 1) +
+                       " ".repeat((height - 1) - i - 1) +
+                       "\n");
+    }
+    stringTree += (" ".repeat(height - 2) +
+                   "|" +
+                   " ".repeat(height - 2) +
+                   "\n");
     return stringTree;
-}
+};
